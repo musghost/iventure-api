@@ -1,0 +1,58 @@
+{
+  "name": "Deuda",
+  "plural": "deudas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "imagen": {
+      "type": "string"
+    },
+    "tasa_min": {
+      "type": "string",
+      "required": true
+    },
+    "tasa_max": {
+      "type": "string",
+      "required": true
+    },
+    "monto_min": {
+      "type": "string",
+      "required": true
+    },
+    "monto_max": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+    
+  ],
+  "methods": {}
+}
