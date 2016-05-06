@@ -44,5 +44,9 @@
   "Financiero": {
     "dataSource": "mysql",
     "public": true
+  },
+  "Crypto": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

@@ -5,6 +5,7 @@ module.exports = function(server) {
   var Deuda = server.models.Deuda;
   var Equidad = server.models.Equidad;
   var Financiero = server.models.Financiero;
+  var Crypto = server.models.Crypto;
 
   User.create({
     email: 'admin@admin.com', password: 'password'
@@ -164,6 +165,39 @@ module.exports = function(server) {
         calificacion: 'A',
         rendimiento: '6.3%',
         link: 'http://mellow.online'
+      }
+    ], function(err) {
+      if (err) {
+        console.log(err);
+      }
+    })
+  });
+
+  Crypto.count(function(err, count) {
+    if(err) {
+      console.log(err);
+      return;
+    }
+    if(count > 0) return;
+
+    Crypto.create([
+      {
+        pagina: 'Bitcoin.com',
+        compra: '$23.34',
+        venta: '$42.98',
+        link: 'http://bitcoin.com'
+      },
+      {
+        pagina: 'Cubits',
+        compra: '$25.34',
+        venta: '$41.98',
+        link: 'http://cubits.com'
+      },
+      {
+        pagina: 'Indacoin',
+        compra: '$23.34',
+        venta: '$43.98',
+        link: 'http://indacoin.com'
       }
     ], function(err) {
       if (err) {

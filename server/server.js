@@ -43,7 +43,7 @@ boot(app, __dirname, function(err) {
 
 app
   .dataSources['mysql']
-  .autoupdate(['User', 'Deuda', 'Equidad', 'Financiero', 'AccessToken', 'ACL'],function(err) {
+  .autoupdate(['User', 'Deuda', 'Equidad', 'Financiero', 'AccessToken', 'ACL', 'Crypto'],function(err) {
     if (err) {
       console.log(err);
     } else {
